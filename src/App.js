@@ -1,17 +1,23 @@
 // import logo from './logo.svg';
 import './App.css';
-import {Navbar, NavbarBrand} from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import Menu from './components/MenuComponent';
 function App() {
   return (
-    <div className="App">
-     <Navbar dark color="primary">
-       <div className="primary">
-         <div className="container">
-           <NavbarBrand href="/">RizwanUllah</NavbarBrand>
-           </div>
-       </div>
-     </Navbar>
+    <div>
+      <Navbar dark color="black">
+
+        <div className="primary">
+          <div className="container">
+
+            <NavbarBrand href="/">Karachi Resturant</NavbarBrand>
+          </div>
+        </div>
+
+      </Navbar>
+      <Menu />
     </div>
+
   );
 }
 
