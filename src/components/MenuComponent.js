@@ -28,7 +28,7 @@ class Menu extends Component {
         if(dish != null){
             return(
                 <Card>
-                    <CardImg width="50%" src={dish.image} alt={dish.name}/>
+                    <CardImg width="100%" src={dish.image} alt={dish.name}/>
                     <CardBody>
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
@@ -66,14 +66,14 @@ class Menu extends Component {
                 <hr/>
                 <h4>Selected Itmes Details</h4>
                 <hr/>
-                <div style={{display: 'flex'}}>
-                <div className="row col-12 col-md-5 m-1">
+                <div className="row col-12 col-md-5 m-1" >
+                {/* <div className="row col-lg-6 col-md-6 col-ms-12 m-1"> */}
                  {this.renderDish(this.state.selectedDish)}
                 </div>
-                 <div className="row col-12 col-md-5 m-1">
+                 {/* <div className="row col-lg-6 col-md-6 col-ms-12 m-1"> */}
                     <DishDetails selectedDish={this.state.selectedDish} />
-                </div> 
-                </div>
+                {/* </div>  */}
+                {/* </div> */}
             </div>
                         
         );
