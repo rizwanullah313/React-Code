@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap'
+import DishDetails from './DishdetailComponent';
 import './Menu.css';
+
+
 class Menu extends Component {
     constructor(props) {
         super(props);
@@ -9,27 +12,30 @@ class Menu extends Component {
         this.state = {
             selectedDish: null
         };
-        console.log("menu component is invoked");
+        // console.log("menu component is invoked");
+
     }
     componentDidMount(){
-        console.log("menu component didmount is invoked");
+        // console.log("menu component didmount is invoked");
     }
 
     onDishSelect(dish){
         this.setState({selectedDish: dish});
+        // console.log("menu component didmount is dish");
+       console.log(dish.comments);
     }
     renderDish(dish){
         if(dish != null){
             return(
                 <Card>
-                    <CardImg width="100%" src={dish.image} alt={dish.name}/>
+                    <CardImg width="50%" src={dish.image} alt={dish.name}/>
                     <CardBody>
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
                     </CardBody>
+                    
                 </Card>
             );
-
         }
         else{
             return(
@@ -60,10 +66,16 @@ class Menu extends Component {
                 <hr/>
                 <h4>Selected Itmes Details</h4>
                 <hr/>
-                <div className="row">
+                <div style={{display: 'flex'}}>
+                <div className="row col-12 col-md-5 m-1">
                  {this.renderDish(this.state.selectedDish)}
                 </div>
+                 <div className="row col-12 col-md-5 m-1">
+                    <DishDetails selectedDish={this.state.selectedDish} />
+                </div> 
+                </div>
             </div>
+                        
         );
     }
 }
